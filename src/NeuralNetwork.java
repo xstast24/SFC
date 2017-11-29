@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class NeuralNetwork {
     protected final int inputNeuronsCount;
@@ -19,6 +20,10 @@ public class NeuralNetwork {
 
     public void run(){
         System.out.println("Hello, I am Lindsay Lohan.");
+    }
+
+    public void loadInput(Vector<Double> input){
+
     }
 
     public void initialize(int inputNeurons, int hiddenNeurons, int outputNeurons){
@@ -47,11 +52,11 @@ public class NeuralNetwork {
             }
         }
 
-        for (Neuron n1 : hiddenLayer){
-            for (Neuron n2: outputLayer){
-                Synapse syn = new Synapse(n1, n2);
+        for (Neuron n2 : hiddenLayer){
+            for (Neuron n3: outputLayer){
+                Synapse syn = new Synapse(n2, n3);
                 synapsesL2toL3.add(syn);
-                n2.addSynapse(syn);
+                n3.addSynapse(syn);
             }
         }
     }
