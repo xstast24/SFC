@@ -10,18 +10,25 @@ public class Main {
 	    int hiddenNeurons = 2;
 	    int outputNeurons = 1;
 
-        //TODO parse args
-        //load training set from directory, store files to array
+	    //TODO parse arguments
         String trainPath = "resources/set1";
+
+
+        //load training sets from directory
+        ArrayList<Vector<Double>> trainInputs = new ArrayList<>();
+        ArrayList<Vector<Double>> trainOutputs = new ArrayList<>();
         for (String path : getFilepathsFromDir(trainPath)){
+            //check each file - if it is input or output, and load data accordingly
             File file = new File(path);
             if (file.getName().startsWith("in")){
+                //load input data and add it to input array
                 Vector<Double> data = loadDataFromFile(path);
-                // add it to input array
+                trainInputs.add(data);
             }
             else if (file.getName().startsWith("out")){
+                //load input data and add it to output array
                 Vector<Double> data = loadDataFromFile(path);
-                // add it to output array
+                trainOutputs.add(data);
             }
         }
 
@@ -36,12 +43,14 @@ public class Main {
 	    network.run();
     }
 
+    /*
+    * Read file and load all integers from it (separated by whitespaces).
+    * */
     static Vector<Double> loadDataFromFile(String path){
         Vector<Double> data = new Vector<>();
-        File file = new File(path);
 
         try {
-            Scanner input = new Scanner(file);
+            Scanner input = new Scanner(new File(path));
             while(input.hasNextLine())
             {
                 Scanner lineReader = new Scanner(input.nextLine());
@@ -57,6 +66,9 @@ public class Main {
         return data;
     }
 
+    /*
+    * Find all files (not directories) in given directory. Return list of their absolute paths.
+    * */
     static ArrayList<String> getFilepathsFromDir(String path) {
         ArrayList<String> results = new ArrayList<>();
         File directory = new File(path);
@@ -76,13 +88,18 @@ public class Main {
         return results;
     }
 
+    /*
+    * Exit program with error message and print help. Exit with code 1.
+    * */
     static void exitWithMsgAndHelp(String msg){
         String help = "Neural network / backpropagation. For more info see documentation." + System.lineSeparator() +
                 "-help : print help and exit" + System.lineSeparator() +
                 "-train <path> : path to folder with training sets" + System.lineSeparator() +
                 "-test <path> : path to folder with tested inputs" + System.lineSeparator();
 
-        System.out.print(msg + System.lineSeparator());
+        if (msg != null){
+            System.out.print(msg + System.lineSeparator());
+        }
         System.out.print(help);
         System.exit(1);
     }
