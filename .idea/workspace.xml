@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1634153b-e4b5-4e84-9027-9b9445949a50" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/set1/in6" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/set1/out6" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SFC/set2/in5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SFC/set2/out5" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SFC/config/config.properties" afterPath="$PROJECT_DIR$/out/production/SFC/config/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/config/config.properties" afterPath="$PROJECT_DIR$/resources/config/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/in2" afterPath="$PROJECT_DIR$/resources/set1/in2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/in3" afterPath="$PROJECT_DIR$/resources/set1/in3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/in4" afterPath="$PROJECT_DIR$/resources/set1/in4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/in5" afterPath="$PROJECT_DIR$/resources/set1/in5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/out1" afterPath="$PROJECT_DIR$/resources/set1/out1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/out2" afterPath="$PROJECT_DIR$/resources/set1/out2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/out3" afterPath="$PROJECT_DIR$/resources/set1/out3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/out4" afterPath="$PROJECT_DIR$/resources/set1/out4" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/set1/out5" afterPath="$PROJECT_DIR$/resources/set1/out5" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Synapse.java" afterPath="$PROJECT_DIR$/src/Synapse.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,7 +14,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -91,6 +87,7 @@
         <option value="$PROJECT_DIR$/resources/test1/in52" />
         <option value="$PROJECT_DIR$/resources/test1/in61" />
         <option value="$PROJECT_DIR$/resources/test1/in62" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -144,18 +141,6 @@
               <item name="SFC" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SFC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SFC" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="set1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SFC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SFC" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="test1" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SFC" type="b2602c69:ProjectViewProjectNode" />
@@ -252,15 +237,16 @@
       <workItem from="1512058997541" duration="616000" />
       <workItem from="1512059637268" duration="145000" />
       <workItem from="1512059805793" duration="298000" />
-      <workItem from="1512060126253" duration="15100000" />
+      <workItem from="1512060126253" duration="15201000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50805000" />
+    <option name="totallyTimeSpent" value="50906000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -302,14 +288,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_152/src.zip!/java/lang/Math.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="533" column="19" lean-forward="false" selection-start-line="533" selection-start-column="19" selection-end-line="533" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Neuron.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -714,6 +692,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="3" lean-forward="false" selection-start-line="3" selection-start-column="3" selection-end-line="3" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="5" lean-forward="false" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
           <folding />
         </state>
       </provider>
