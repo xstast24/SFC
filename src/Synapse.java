@@ -8,7 +8,7 @@ public class Synapse {
 
     public Synapse(@NotNull Neuron n1, @NotNull Neuron n2){
         Random rand = new Random();
-        weight = rand.nextDouble();
+        weight = rand.nextDouble() - 0.5; //interval <-0.5; 0.5)
 
         neuron1 = n1;
         neuron2 = n2;
@@ -16,7 +16,7 @@ public class Synapse {
 
     public Synapse(){
         Random rand = new Random();
-        weight = rand.nextDouble();
+        weight = rand.nextDouble() - 0.5; //interval <-0.5; 0.5)
 
         neuron1 = null;
         neuron2 = null;
