@@ -1,18 +1,13 @@
 import java.util.*;
 import java.io.*;
-import java.nio.*;
-import java.nio.file.*;
 
 public class Main {
 
     public static void main(String[] args) {
-	    int inputNeurons;
-	    int hiddenNeurons;
-	    int outputNeurons;
-
-	    //TODO parse arguments
-        String trainPath = "resources/set1";
-
+	    //load program configuration
+        Config cfg = new Config();
+        String trainPath = cfg.getProperty("trainingSetsPath");
+        String testPath = cfg.getProperty("testInputPath") ;
 
         //load training sets from directory
         ArrayList<Vector<Double>> trainInputs = new ArrayList<>();
@@ -37,13 +32,24 @@ public class Main {
         }
 
         //create neural network
-        inputNeurons = trainInputs.get(0).size();
-        hiddenNeurons = 2; //TODO get z parametru?
-        outputNeurons = trainOutputs.get(0).size();
+        int inputNeurons = trainInputs.get(0).size();
+        int hiddenNeurons = cfg.getPropertyAsInt("hiddenNeuronsCount");
+        int outputNeurons = trainOutputs.get(0).size();
+        System.out.println(inputNeurons +" " +hiddenNeurons +" "+ outputNeurons);
 	    NeuralNetwork network = new NeuralNetwork(inputNeurons, hiddenNeurons, outputNeurons);
 
         //train network
-        network.train(trainInputs, trainOutputs);
+        int trainCycles = cfg.getPropertyAsInt("maxTrainCycles");
+        double minError = cfg.getPropertyAsDouble("minTrainError");
+        double trainCoef = cfg.getPropertyAsDouble("learningCoeficient");
+        network.train(trainInputs, trainOutputs, trainCycles, trainCoef, minError);
+
+
+        //load test input
+        Vector<Double> testInput = loadDataFromFile(testPath);
+
+        //run test input through network
+        network.run(testInput);
     }
 
     /*
@@ -94,18 +100,12 @@ public class Main {
     }
 
     /*
-    * Exit program with error message and print help. Exit with code 1.
+    * Exit program with error message. Exit with code 1.
     * */
     static void exitWithMsgAndHelp(String msg){
-        String help = "Neural network / backpropagation. For more info see documentation." + System.lineSeparator() +
-                "-help : print help and exit" + System.lineSeparator() +
-                "-train <path> : path to folder with training sets" + System.lineSeparator() +
-                "-test <path> : path to folder with tested inputs" + System.lineSeparator();
-
         if (msg != null){
             System.out.print(msg + System.lineSeparator());
         }
-        System.out.print(help);
         System.exit(1);
     }
 }

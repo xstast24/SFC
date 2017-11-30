@@ -2,16 +2,11 @@ import java.util.Random;
 import com.sun.istack.internal.NotNull;
 
 public class Synapse {
-    static int synapseCount = 0;
-
-    private final int id;
     private double weight;
     private final Neuron neuron1;
     private final Neuron neuron2;
 
     public Synapse(@NotNull Neuron n1, @NotNull Neuron n2){
-        id = synapseCount++;
-
         Random rand = new Random();
         weight = rand.nextDouble();
 
@@ -20,8 +15,6 @@ public class Synapse {
     }
 
     public Synapse(){
-        id = synapseCount++;
-
         Random rand = new Random();
         weight = rand.nextDouble();
 
@@ -37,6 +30,14 @@ public class Synapse {
             return neuron1.getOutput() * weight;
         }
 
+    }
+
+    public double getWeight(){
+        return weight;
+    }
+
+    protected void setWeight(double value){
+        weight = value;
     }
 
     public Neuron getNeuron1(){

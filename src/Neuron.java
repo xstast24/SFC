@@ -2,13 +2,10 @@ import java.util.ArrayList;
 import java.lang.Math;
 
 class Neuron {
-    static private int id_counter = 0;
-    private final int id;
-    private final ArrayList<Synapse> synapses = new ArrayList<Synapse>();
+    protected final ArrayList<Synapse> synapses = new ArrayList<Synapse>();
     private double output;
 
     Neuron(){
-        id = id_counter++;
         output = 0;
 
         // add input bias (synapse with value 1)
@@ -18,6 +15,10 @@ class Neuron {
 
     void addSynapse(Synapse syn){
         synapses.add(syn);
+    }
+
+    Synapse getSynapse(int index){
+        return synapses.get(index);
     }
 
     void calculateOutput(){
