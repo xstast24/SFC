@@ -18,12 +18,30 @@ public class NeuralNetwork {
         initialize(inputNeurons, hiddenNeurons, outputNeurons);
     }
 
-    public void run(){
-        System.out.println("Hello, I am Lindsay Lohan.");
+    public void train(ArrayList<Vector<Double>> inputs, ArrayList<Vector<Double>> outputs){
+        for (int i=0; i < inputs.size(); i++){
+            //load inputs
+            setInput(inputs.get(i));
+
+            //calculate output
+            calculateOutput();
+
+            //propagate back - update weights
+        }
     }
 
-    public void loadInput(Vector<Double> input){
+    private void setInput(Vector<Double> input){
+        for (int i=0; i < inputNeuronsCount; i++){
+            // assign input value to each neuron in input layer
+            inputLayer.get(i).setOutput(input.get(i));
+        }
+    }
 
+    private void calculateOutput(){
+        for (Neuron neuron : hiddenLayer){
+            neuron.calculateOutput();
+        }
+        // TODO
     }
 
     public void initialize(int inputNeurons, int hiddenNeurons, int outputNeurons){

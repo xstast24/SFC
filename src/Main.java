@@ -6,9 +6,9 @@ import java.nio.file.*;
 public class Main {
 
     public static void main(String[] args) {
-	    int inputNeurons = 2;
-	    int hiddenNeurons = 2;
-	    int outputNeurons = 1;
+	    int inputNeurons;
+	    int hiddenNeurons;
+	    int outputNeurons;
 
 	    //TODO parse arguments
         String trainPath = "resources/set1";
@@ -31,16 +31,19 @@ public class Main {
                 trainOutputs.add(data);
             }
         }
+        // number of inputs must match number of outputs
+        if(trainInputs.size() != trainOutputs.size()){
+            exitWithMsgAndHelp("Training sets do not match - input/output count is different.");
+        }
 
-
-        Vector<Double> input = new Vector<>();
-		input.add(1.0);
-		input.add(0.0);
-
-		Vector<Double> output = new Vector<>();
-
+        //create neural network
+        inputNeurons = trainInputs.get(0).size();
+        hiddenNeurons = 2; //TODO get z parametru?
+        outputNeurons = trainOutputs.get(0).size();
 	    NeuralNetwork network = new NeuralNetwork(inputNeurons, hiddenNeurons, outputNeurons);
-	    network.run();
+
+        //train network
+        network.train(trainInputs, trainOutputs);
     }
 
     /*
@@ -67,7 +70,8 @@ public class Main {
     }
 
     /*
-    * Find all files (not directories) in given directory. Return list of their absolute paths.
+    * Find all files (not directories) in given directory.
+    * Return alphabetically sorted list of their absolute paths.
     * */
     static ArrayList<String> getFilepathsFromDir(String path) {
         ArrayList<String> results = new ArrayList<>();
@@ -77,6 +81,7 @@ public class Main {
         if (files == null){
             exitWithMsgAndHelp("Error loading training set files, no files found in given directory.");
         } else {
+            Arrays.sort(files);
             for (File item : files) {
                 if (item.isFile()) {
                     String itemPath = item.getAbsolutePath();

@@ -28,4 +28,22 @@ public class Synapse {
         neuron1 = null;
         neuron2 = null;
     }
+
+    public double getWeightedValue(){
+        //in case of bias, there is no neuron1, return weight*1.0
+        if (neuron1 == null){
+            return weight;
+        } else {
+            return neuron1.getOutput() * weight;
+        }
+
+    }
+
+    public Neuron getNeuron1(){
+        return neuron1;
+    }
+
+    public Neuron getNeuron2(){
+        return neuron2;
+    }
 }
