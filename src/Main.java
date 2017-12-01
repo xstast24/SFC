@@ -35,7 +35,6 @@ public class Main {
         int inputNeurons = trainInputs.get(0).size();
         int hiddenNeurons = cfg.getPropertyAsInt("hiddenNeuronsCount");
         int outputNeurons = trainOutputs.get(0).size();
-        System.out.println(inputNeurons +" " +hiddenNeurons +" "+ outputNeurons);
 	    NeuralNetwork network = new NeuralNetwork(inputNeurons, hiddenNeurons, outputNeurons);
 
         //train network

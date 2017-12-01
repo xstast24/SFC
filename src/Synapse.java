@@ -1,12 +1,11 @@
 import java.util.Random;
-import com.sun.istack.internal.NotNull;
 
 public class Synapse {
     private double weight;
     private final Neuron neuron1;
     private final Neuron neuron2;
 
-    public Synapse(@NotNull Neuron n1, @NotNull Neuron n2){
+    public Synapse(Neuron n1, Neuron n2){
         Random rand = new Random();
         weight = rand.nextDouble() - 0.5; //interval <-0.5; 0.5)
 
